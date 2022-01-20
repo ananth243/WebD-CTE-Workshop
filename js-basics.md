@@ -359,4 +359,126 @@ remainder = 5 % -2;
 console.log(remainder); // 1
 ```
 
+### Assignment operator
+
+```Javascript
+let a = 10, b = 20, c = 30;
+
+b = c; // b is 30
+a = b; // a is also 30 
+```
+
+### Logical operattrs
+
+- The NOT operator (``!``) negates a boolean value. The (``!!``) converts a value into its real boolean value.
+- The AND operator (&``&``) is applied to two Boolean values and returns true if both values are true.
+- The OR operator (|``|``) is applied to two Boolean values and returns true if one of the operands is true.
+- Both ``&&`` and ``||`` operator are short-circuited. They cab be also applied to non-Boolean values.
+- The logical operator precedence from the highest to the lowest is ``!``, `&&` and ``||``.
+
+```javascript
+let eligible = false,
+console.log(!eligible);
+
+console.log(!undefined); // true
+console.log(!null); // true
+console.log(!20); //false
+console.log(!0); //true
+console.log(!NaN); //true
+console.log(!{}); // false
+console.log(!''); //true
+console.log(!'OK'); //false
+console.log(!false); //true
+console.log(!true); //false
+
+
+let result = (a=true) && (b=false);//false
+result = (a=true) || (b=false);//true
+
+```
+
+### Comparison operators
+
+```javascript
+let r1 = 20 > 10; // true
+let r2 = 20 < 10; // false
+let r3 = 10 == 10; // true
+
+console.log("10" == 10); // true
+console.log("10" === 10); // false
+```
+
 ## Section 4. Control flow Statements
+
+### Conditionals
+
+**if statement**
+
+![if condition](https://www.javascripttutorial.net/wp-content/uploads/2022/01/JavaScript-if.svg)
+
+```javascript
+let age = 18;
+if (age >= 18) {
+  console.log('You can sign up');
+}
+
+let age = 16;
+let state = 'CA';
+//nested if
+if (state == 'CA') {
+  if (age >= 16) {
+    console.log('You can drive.');
+  }
+}
+
+let age = 16;
+let state = 'CA';
+
+if (state == 'CA' && age == 16) {
+  console.log('You can drive.');
+}
+
+
+```
+
+**if else statement**
+
+![if else](https://www.javascripttutorial.net/wp-content/uploads/2022/01/JavaScript-if-else.svg)
+
+```javascript
+let age = 16;
+
+if (age >= 18) {
+  console.log('You can get in dude');
+} else {
+  console.log('Kid you are too young');
+}
+
+```
+
+
+**if else if statement**
+
+```javascript
+let weight = 70; // kg
+let height = 1.72; // meter
+
+// calculate the body mass index (BMI)
+let bmi = weight / (height * height);
+
+let weightStatus;
+
+if (bmi < 18.5) {
+  weightStatus = 'Underweight';
+} else if (bmi >= 18.5 && bmi <= 24.9) {
+  weightStatus = 'Healthy Weight';
+} else if (bmi >= 25 && bmi <= 29.9) {
+  weightStatus = 'Overweight';
+} else {
+  weightStatus = 'Obesity';
+}
+
+console.log(weightStatus);
+```
+
+### Ternary operator
