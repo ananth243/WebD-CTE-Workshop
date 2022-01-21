@@ -482,3 +482,134 @@ console.log(weightStatus);
 ```
 
 ### Ternary operator
+
+The ternary operator takes three operands: 
+- a condition followed by a question mark (?).
+- an expression to execute if the condition is truthy, followed by a colon :
+- finally the expression to execute if the condition is falsy.
+
+Ternary operators can do exactly what if elses do, this is just a concise way of doing things.
+
+- **Falsy** : false, 0, -0, "", '', null, false, undefined, NaN.
+- **Truthy** : everything that is not falsy
+
+Syntax:
+```javascript
+  condition ? exprIfTrue : exprIfFalse
+```
+
+Example:
+```javascript
+  let age = 26;
+  let beverage = (age >= 21) ? "Beer" : "Juice";
+
+  console.log(beverage); // "Beer"
+```
+
+## Loops
+
+Loops offer a quick and easy way to do something repeatedly.
+There are many different kinds of loops, but they all essentially do the same thing: they repeat an action some number of times.
+
+**Example of loops**
+
+### For loops
+  - We initialize a variable in ```initialExpression``` the and execute a statement as long a ```conditionExpression``` is true.
+
+Syntax:
+```javascript
+for ([initialExpression]; [conditionExpression]; [incrementExpression])
+  statement
+```
+Example:
+  - Here, ```step < 5``` is the condition and ```step++``` is the iteration happening, i.e. value of i increases by 1 after every iteration.
+```javascript
+for (let step = 0; step < 5; step++) {
+  console.log('Walked one step ahead.');
+}
+```
+
+### While loops
+ - A statement is executed as long the condition is true.
+ - As soon as the the condition is false, we break out of the loop.
+Syntax:
+```javascript
+while (condition){
+  statement
+}
+```
+Examples:
+  - A loop to print whole numbers less than 11.
+  - How does an infinite loop look.
+    - **Note**: If you ever use ```while(true)```, always make sure to write a break statement.
+```javascript
+
+let n = 0;
+while (n < 11) {
+  n++;
+  console.log(n);
+}
+
+// Infinite loops which never stop
+while (true) {
+  console.log('Hello, world!');
+}
+
+```
+
+### do-while Loop
+  - Their basic logic of working is like While loops.
+  - But, here statement is always executed once before the condition is checked.
+  - If condition is true, the statement executes again.
+
+Syntax:
+```javascript
+  do{
+      statement
+  }while (condition);
+
+```
+
+Example:
+  - Below code will print 1, 2, 3, 4, 5.
+```javascript
+  let i = 0;
+  do {
+    i += 1;
+    console.log(i);
+  } while (i < 5);
+
+```
+
+### Break vs continue statement
+
+  - Break leaves the loop completely and executes the statements after the loop.
+  - Continue leaves the current iteration and executes with the next value in the loop. 
+  - Break completely exits the loop.
+  - Continue skips the statements after the continue statement and keeps looping.
+
+Example:
+```javascript
+
+a = [1,2,5,3,4,1,7]
+for (let i = 0; i < a.length; i++) {
+  if (a[i] + a[i+1] === 5) {
+    console.log(a[i],a[i+1]);
+    break;
+  }
+}
+//4,1
+
+let i = 0;
+let n = 0;
+while (i < 5) {
+  i++;
+  if (i === 3) {
+    continue;
+  }
+  n += i;
+  console.log(n);
+}
+//1,3,7,12
+
+```
