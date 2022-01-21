@@ -490,7 +490,6 @@ The ternary operator takes in three operands:
 - finally the expression to execute if the condition is falsy.
 
 Ternary operators can do exactly what if elses do, this is just a concise way of doing things.
-
 - **Falsy** : false, 0, -0, "", '', null, false, undefined, NaN.
 - **Truthy** : everything that is not falsy
 
